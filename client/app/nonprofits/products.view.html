@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+  <tr>
+    <td><h2>{{product.name}}</h2></td>
+    <td></td>
+  </tr>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="panel-body">
+      <div class="thumbnail">
+        <img ng-src="{{product.image}}">
+      </div>
+    </div>
+
+    </div>
+
+    <div class="col-sm-5">
+
+      <div class="panel-body">
+        <table class="table table-striped">
+      <tr>
+        <td>Product Category</td>
+        <td>{{product.category}}</td>
+      </tr>
+      <!-- <tr>
+        <td>Product Image</td>
+        <td class="thumbnail" style="max-width:25%;">{{product.image}}</td>
+      </tr> -->
+      <tr>
+        <td>Product Description</td>
+        <td>{{product.description}}</td>
+      </tr>
+      <tr>
+        <td>Product Price</td>
+        <td>{{product.price}}</td>
+      </tr>
+      <tr>
+        <td>Product Qty</td>
+        <td>{{product.stock}}</td>
+      </tr>
+    </table>
+
+
+  </div>
+
+  <div class="panel">
+    <div class="input-group">
+    <span class="input-group-addon">Quantity</span>
+    <input type="number" class="form-control" aria-label="Add to Cart">
+    <span class="input-group-addon btn-success">Add to Cart</span>
+  </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+<div>
+
+
+  <div class="panel-footer">
+
+
+  <a class="btn btn-primary" ui-sref="products.productsEdit({id:product._id})">Edit</a> |
+  <a class="btn btn-danger"  ng-click="deleteProduct(product)">Delete</a>
+
+
+
+</div>
+</div>
+
+</div>

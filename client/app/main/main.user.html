@@ -1,0 +1,20 @@
+<h1 class="page-header">{{ getCurrentUser().name }} <small>DASHBOARD</small></h1>
+
+
+<h2>Transactions List</h2>
+<table class="table table-bordered">
+  <tr ng-repeat="transaction in transactions">
+    <td>{{transaction.date}}</td>
+    <td>{{transaction.org}}</td>
+    <td>{{transaction.amount}}</td>
+  </tr>
+
+</table>
+
+<div class="well well-lg">
+  <h3> Category View </h3>
+
+  <canvas id="doughnut" class="chart chart-doughnut" data="data"
+  labels="labels"></canvas>
+
+</div>

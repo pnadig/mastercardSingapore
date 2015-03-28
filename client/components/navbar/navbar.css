@@ -1,0 +1,18 @@
+.navbar.navbar, .navbar-default.navbar {
+  background-color: #D38312;  !important
+  color: rgba(255, 255, 255, 0.84);
+}
+
+
+.navbar-default .navbar-nav > li > a {
+  color: #FAF4F4; !important
+}
+
+.navbar-default .navbar-brand {
+  color: #FAF4F4; !important
+}
+
+
+.navbar-default .navbar-text {
+  color: #FAF4F4; !important
+}

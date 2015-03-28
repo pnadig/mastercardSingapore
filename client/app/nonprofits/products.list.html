@@ -1,0 +1,57 @@
+<!--
+<table class="table table-striped">
+
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th>Qty in Stock</th>
+
+  </tr>
+</thead>
+  <tr ng-repeat="product in products">
+    <td><a style="max-width:40%;" class="btn btn-default btn-link thumbnail" ui-sref="products.productsView({id:product._id})"><img ng-src="{{product.image}}" alt="200x200"/></a></td>
+    <td><a class="btn btn-default btn-link" ui-sref="products.productsView({id:product._id})">{{product.name}}</a></td>
+    <td>{{product.category}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.stock}}</td>
+
+  </tr>
+</table> -->
+
+
+<h1 class="page-header"> All Products</h1>
+
+	<div class="container-fluid">
+
+
+
+		<table st-table="products" st-safe-src="products" class="table">
+			<thead>
+			<tr>
+
+        <th>#</th>
+        <th st-sort="name">Name</th>
+        <th st-sort="category">Category</th>
+        <th st-sort="price">Price</th>
+        <th st-sort="stock">Qty in Stock</th>
+			</tr>
+			<tr>
+				<th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="product in products">
+        <td><a style="max-width:40%;" class="btn btn-default btn-link thumbnail" ui-sref="products.productsView({id:product._id})"><img ng-src="{{product.image}}" alt="200x200"/></a></td>
+        <td><a class="btn btn-default btn-link" ui-sref="products.productsView({id:product._id})">{{product.name}}</a></td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+
+			</tr>
+			</tbody>
+		</table>
+
+	</div>
