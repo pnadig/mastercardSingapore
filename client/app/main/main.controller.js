@@ -50,6 +50,10 @@ angular.module('apiTestApp')
 
     $scope.nonprofit = Nonprofit.get({ id: $stateParams.id });
 
+    // $scope.nonprofit.donation = 0;
+    //
+    // $scope.newdonation = $scope.nonprofit.donation * 1000;
+
     $scope.deleteNonprofit = function(nonprofit) { // Delete a movie. Issues a DELETE to /api/movies/:id
 
       product.$delete(function() {

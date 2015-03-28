@@ -22,12 +22,12 @@
       <div class="panel-body">
         <table class="table table-striped">
       <tr>
-        <td>Org Category</td>
+        <td><strong>Org Category</strong></td>
         <td>{{nonprofit.category}}</td>
       </tr>
 
       <tr>
-        <td>Org Description</td>
+        <td><strong>Org Description</strong></td>
         <td>{{nonprofit.description}}</td>
       </tr>
 
@@ -38,13 +38,22 @@
 
   <p>
 
+    <!-- <div class="form-group">
+      <label for="category" class="col-sm-2 control-label">Category</label>
+      <div class="col-sm-10">
+        <input type="text" ng-model="nonprofit.category" class="form-control" id="category" placeholder="Org Category"/>
+      </div>
+    </div> -->
+
   <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input type="number" class="form-control" aria-label="Donate!">
+  <input type="number" ng-model="nonprofit.donation" class="form-control" id="donation" placeholder="50.00" aria-label="Donate!">
 
   </div>
 </p>
 <br>
+
+
 
   <div class="well well-sm">
 
@@ -54,8 +63,8 @@
     <!-- <span class="input-group-addon btn-success">
       Donate</span> -->
       <button class="btn btn-lg btn-block" data-sc-key="sbpb_NDI4ZTNhZDQtYmY1OC00YTBiLWFiN2UtY2RhNDk4OTRiMjg4"
-        data-name="Jasmine Green Tea"
-        data-description="Smooth tea with a rich jasmine bouquet"
+        data-name="{{nonprofit.name}}"
+        data-description="{{nonprofit.name}}"
         data-reference="99999"
         data-amount="3000"
         data-masterpass="true"
