@@ -8,7 +8,8 @@ angular.module('apiTestApp', [
   'ui.router',
   'ui.bootstrap',
   'xml',
-  'chart.js'
+  'chart.js',
+  'ui.grid'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

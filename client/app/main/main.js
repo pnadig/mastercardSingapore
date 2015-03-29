@@ -26,7 +26,7 @@ angular.module('apiTestApp')
       .state('main.restaurants', {
         url: 'restaurants',
         templateUrl: 'app/main/main.restaurants.html',
-        controller: 'XMLCtrl'
+        controller: 'restaurantCtrl'
       })
       .state('main.nonprofitCreate', {
         url: 'nonprofitList/create',

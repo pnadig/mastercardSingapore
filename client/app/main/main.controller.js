@@ -25,14 +25,66 @@ angular.module('apiTestApp')
       socket.unsyncUpdates('thing');
     });
   })
-  .controller('XMLCtrl', function ($scope, $http, $state, $location, $window, Nonprofit) {
+  .controller('restaurantCtrl', function ($scope, $http, $state, $location, $window, Nonprofit) {
+    
+    var req = {
+      method: 'GET',
+      url: 'http://dmartin.org:8028/restaurants/v1/restaurant?Format=XML&PageOffset=0&PageLength=10&Latitude=38.53463&Longitude=-90.286781',
+      headers: {
+      'Content-Type': undefined
+      },
+      data: { data: 'data' }
+    }
+
+    //$http(req).success(function(){$scope.restaurants = data.Restaurants.Restaurant;}).error(function(){});
+
     $http.get('http://dmartin.org:8028/restaurants/v1/restaurant?Format=XML&PageOffset=0&PageLength=10&Latitude=38.53463&Longitude=-90.286781').success(function (data) {
       $scope.restaurants = data.Restaurants.Restaurant;
     });
 
-    $scope.nonprofits = Nonprofit.query();
+    //$scope.nonprofits = Nonprofit.query();
 
   })
+  .controller('ModalDemoCtrl', function ($scope, $modal, $log) {
+
+    $scope.items = ['item1', 'item2', 'item3'];
+
+    $scope.open = function (size) {
+
+    var modalInstance = $modal.open({
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+    };
+
+  })
+  .controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+})
   .controller('npListCtrl', function ($scope, $state, $location, $window, Nonprofit) {
 
     $scope.nonprofits = Nonprofit.query();

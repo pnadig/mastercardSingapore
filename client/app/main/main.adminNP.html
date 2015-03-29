@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1 class="page-header">Women Empowerment Orgnization <small>DASHBOARD</small></h1>
 
 
@@ -9,18 +11,42 @@
     <td>{{transaction.amount}}</td>
   </tr>
   <tr>
-    <td> <strong> Total Donations received: </strong> $ 500 </td>
+    <td> <strong> Total Donations received:  <mark> $ 240 </mark></strong> </td>
   </tr>
 
 </table>
 
-<div class="well well-lg">
+<!-- <div class="well well-lg">
   <p>
     <h3> Pay Organization </h3>
     <button type="button" class="btn btn-success btn-lg">Pay</button>
   </p>
 
+</div> -->
 
+<div class="well well-lg" ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Payment Successful</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                Payment to <mark>Women Empowerment Orgnization</mark> successful.
+            </ul>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            
+        </div>
+    </script>
 
+    <button class="btn btn-success btn-lg" ng-click="open()">Pay Organization</button>
+    <!-- <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+    <button class="btn btn-default" ng-click="open('sm')">Small modal</button> -->
+    <!-- <div ng-show="selected">Selection from a modal: {{ selected }}</div> -->
+</div>
 
 </div>
+
+

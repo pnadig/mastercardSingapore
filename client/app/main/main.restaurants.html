@@ -1,10 +1,12 @@
 <div class="container">
   Partials View // Restaurants List
 
-  <table>
+  <table class="table table-striped table-hovered">
   <tr ng-repeat="restaurant in restaurants">
     <td>{{ restaurant.Name }}</td>
     <td>{{ restaurant.Id }}</td>
+    <td>{{ restaurant.Location.Name }}</td>
+    <td>{{ restaurant.Location.Address.City }}</td>
   </tr>
   </table>
 
